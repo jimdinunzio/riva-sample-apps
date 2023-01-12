@@ -6,9 +6,9 @@
 # ==============================================================================
 
 import grpc
-import riva_api.riva_audio_pb2 as ra
-import riva_api.riva_tts_pb2 as rtts
-import riva_api.riva_tts_pb2_grpc as rtts_srv
+import riva.client.proto.riva_audio_pb2 as ra
+import riva.client.proto.riva_tts_pb2 as rtts
+import riva.client.proto.riva_tts_pb2_grpc as rtts_srv
 from six.moves import queue
 from config import riva_config, tts_config
 import numpy as np

@@ -11,7 +11,7 @@ intent_transitions = {
         'weather.qa_answer': 'checkWeatherLocation',
         'weather.weather': 'checkWeatherLocation',
         'context.weather': 'checkWeatherLocation',
-        'weather.temprature': 'checkWeatherLocation',
+        'weather.temperature': 'checkWeatherLocation',
         'weather.sunny': 'checkWeatherLocation',
         'weather.cloudy': 'checkWeatherLocation',
         'weather.snow': 'checkWeatherLocation',

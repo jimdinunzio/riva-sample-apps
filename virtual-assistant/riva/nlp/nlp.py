@@ -5,8 +5,8 @@
 # README.md file.
 # ==============================================================================
 
-import riva_api.riva_nlp_pb2 as rnlp
-import riva_api.riva_nlp_pb2_grpc as rnlp_srv
+import riva.client.proto.riva_nlp_pb2 as rnlp
+import riva.client.proto.riva_nlp_pb2_grpc as rnlp_srv
 
 import grpc
 from config import riva_config, nlp_config

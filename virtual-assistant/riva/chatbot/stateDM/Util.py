@@ -125,7 +125,8 @@ class WeatherService:
     def query_weather(self, location, response):
         params = {
             'access_key': self.access_key,
-            'query': location
+            'query': location,
+            'units': 'f'
         }
         try:
             api_result = requests.get('http://api.weatherstack.com/current', params)
@@ -152,7 +153,8 @@ class WeatherService:
     def query_weather_forecast(self, location, day, response):
         params = {
             'access_key': self.access_key,
-            'query': location
+            'query': location,
+            'units': 'f'
         }
         try:
             api_result = requests.get('http://api.weatherstack.com/current', params)
@@ -175,7 +177,8 @@ class WeatherService:
     def query_weather_historical(self, location, day, response):
         params = {
             'access_key': self.access_key,
-            'query': location
+            'query': location,
+            'units': 'f'
         }
         try:
             api_result = requests.get('http://api.weatherstack.com/current', params)

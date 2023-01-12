@@ -271,13 +271,13 @@ class Weather(State):
         return DEFAULT_MESSAGE
 
     def get_feeling(self, temperature):
-        if temperature > 30:
+        if temperature > 86:
             return 'hot'
-        elif temperature > 20:
+        elif temperature > 68:
             return 'warm'
-        elif temperature >10:
+        elif temperature >50:
             return 'chilly'
-        elif temperature > 0:
+        elif temperature >32:
             return 'cold'
         else:
             return 'very cold'
@@ -320,7 +320,7 @@ class Weather(State):
                 message = self.weather_historical(ws, request_data, days)
             else:
                 message = self.weather(ws, request_data)
-        elif request_data['context']['intent'] == 'weather.temprature':
+        elif request_data['context']['intent'] == 'weather.temperature':
             if days > 0:
                 message = self.temperature_forecast(ws, request_data, days)
             elif days < 0:
