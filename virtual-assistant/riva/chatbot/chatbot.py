@@ -10,6 +10,7 @@ import time
 from riva.asr.asr import ASRPipe
 from riva.tts.tts import TTSPipe
 # from riva.tts.tts_stream import TTSPipe
+from threading import Thread
 
 from riva.chatbot.stateDM.state_machine import StateMachine
 from riva.chatbot.stateDM.states import initialState
@@ -38,7 +39,7 @@ class ChatBot(object):
             print(f'[{self.id }] ASR buffer cleared')
     
     def start_asr(self, sio):
-        self.thread_asr = sio.start_background_task(self.server_asr)
+        self.thread_asr = Thread(target = self.server_asr)
         if self.verbose:
             print(f'[{self.id }] ASR background task started')
 

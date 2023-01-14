@@ -33,7 +33,7 @@ nlp_config = {
 }
 
 tts_config = {
-    "VERBOSE": False,
+    "VERBOSE": True,
     "SAMPLE_RATE": 22050,
     "LANGUAGE_CODE": "en-US",  # a BCP-47 language tag
     "VOICE_NAME": "English-US.Male-1", # Options are English-US-Female-1 and English-US-Male-1
