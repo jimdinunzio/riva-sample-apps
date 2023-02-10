@@ -24,6 +24,7 @@ intent_transitions = {
         'navigation.startnavigationpoi': 'checkWeatherLocation',
         'navigation.geteta': 'checkWeatherLocation',
         'navigation.showdirection': 'checkWeatherLocation',
+        'smalltalk.personality_goodbye' : 'end',
         'riva_error': 'error',
         'navigation.showmappoi': 'error',
         'nomatch.none': 'error'

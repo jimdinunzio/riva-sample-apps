@@ -31,7 +31,8 @@ class ChatBot(object):
     def server_asr(self):
         if self.verbose:
             print(f'[{self.id }] Starting chatbot ASR task')
-        self.asr.main_asr()
+        #self.asr.main_asr()
+        
 
     def empty_asr_buffer(self):
         self.asr.empty_asr_buffer()
@@ -40,6 +41,7 @@ class ChatBot(object):
     
     def start_asr(self, sio):
         self.thread_asr = Thread(target = self.server_asr)
+        self.thread_asr.start()
         if self.verbose:
             print(f'[{self.id }] ASR background task started')
 

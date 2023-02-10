@@ -147,6 +147,7 @@ class WeatherService:
             response['humidity'] = p.number_to_words(api_response['current']['humidity'])
             response['wind_mph'] = p.number_to_words(api_response['current']['wind_speed'])
             response['precip'] = p.number_to_words(api_response['current']['precip'])
+            response['weather_icons'] = api_response['current']['weather_icons']
         except:
             response['success'] = False
 

@@ -27,7 +27,9 @@ class StateMachine:
         request_data = {'context': context,
                         'text': text,
                         'uid': self.uid,
-                        'payload': {}}
+                        'payload': {},
+                        'weather_icons':[]
+                        }
 
         # TODO: Add support for !undo (saving previous context) and !reset
 

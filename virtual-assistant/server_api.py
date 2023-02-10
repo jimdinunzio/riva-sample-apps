@@ -13,12 +13,12 @@ import logging
 from os.path import dirname, abspath, join, isdir
 from os import listdir
 from config import client_config
-from engineio.payload import Payload
+#from engineio.payload import Payload
 
 from riva.chatbot.chatbots_multiconversations_management import create_chatbot, get_new_user_conversation_index, get_chatbot
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
-Payload.max_decode_packets = 500  # https://github.com/miguelgrinberg/python-engineio/issues/142
+#Payload.max_decode_packets = 500  # https://github.com/miguelgrinberg/python-engineio/issues/142
 verbose = client_config['VERBOSE']
 
 
@@ -57,15 +57,15 @@ def get_input(text, context, bot, payload, user_conversation_index):
             if client_config['DEBUG']:
                 print(f"[{user_conversation_index}] Response from RivaDM: {response}")
 
-            for resp in response['response']:
-                speak = resp['payload']['text']
-                if len(speak):
-                    currentChatBot.tts_fill_buffer(speak)
+            # for resp in response['response']:
+            #     speak = resp['payload']['text']
+            #     if len(speak):
+            #         currentChatBot.tts_fill_buffer(speak)
             return response['response'], response['context'], user_conversation_index, client_config["DEBUG"]
         except Exception as e:  # Error in execution
 
             print(e)
-            return "Error during execution."
+            return "Error", {}, user_conversation_index, client_config["DEBUG"]
     else:
         print("user_conversation_index not found")
         return "user_conversation_index not found"

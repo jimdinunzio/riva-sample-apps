@@ -107,7 +107,7 @@ class Weather(State):
         response = {}
         ws.query_weather(request_data['context']['location'], response)
         if response['success']:
-            return """It is {} in {} at the moment. The temperature is {} degrees, the humidity is {} percent and the wind speed is {} miles per hour.""".format(
+            return """It is {} in {}. The temperature is {} degrees, the humidity is {} percent and the wind speed is {} miles per hour.""".format(
                 response['condition'], response['city'], response['temperature_c'], response['humidity'], response['wind_mph'])
         return DEFAULT_MESSAGE
 
@@ -133,7 +133,7 @@ class Weather(State):
         response = {}
         ws.query_weather(request_data['context']['location'], response)
         if response['success']:
-            return """The temperature is {} degrees in {} at the moment.""".format(
+            return """The temperature is {} degrees in {}.""".format(
                 response['temperature_c'], response['city'])
         return DEFAULT_MESSAGE
 
@@ -250,7 +250,7 @@ class Weather(State):
         response = {}
         ws.query_weather(request_data['context']['location'], response)
         if response['success']:
-            return """The humidity is {} percent in {} at the moment.""".format(
+            return """The humidity is {} percent in {}.""".format(
                 response['humidity'], response['city'])
         return DEFAULT_MESSAGE
 
@@ -287,7 +287,7 @@ class Weather(State):
         ws.query_weather(request_data['context']['location'], response)
         if response['success']:
             feel = self.get_feeling(response['temperature_c_int'])
-            return """In {} at the moment is {}.""".format(response['city'], feel)
+            return """In {} it is {}.""".format(response['city'], feel)
         return DEFAULT_MESSAGE
 
     def feel_forecast(self, ws, request_data, day):

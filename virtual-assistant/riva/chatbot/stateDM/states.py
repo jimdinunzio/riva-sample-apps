@@ -123,14 +123,13 @@ class error(State):
         self.next_state = userInput
 
 
-# TODO: This state is not in use currently,
 # add this if end of conversation is required
 class end(State):
     def __init__(self, bot, uid):
         super(end, self).__init__("end", bot, uid)
 
     def run(self, request_data):
-        text = "Bye!"
+        text = "Goodbye!"
 
         # Update response with end state text
         request_data.update({'response':
