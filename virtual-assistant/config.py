@@ -13,7 +13,7 @@ client_config = {
 }
 
 riva_config = {
-    "RIVA_SPEECH_API_URL": "localhost:50051", # Replace the IP & port with your hosted Riva endpoint
+    "RIVA_SPEECH_API_URL": "192.168.1.41:50051", # Replace the IP & port with your hosted Riva endpoint
     "ENABLE_QA": "QA unavailable in this VA version. Coming soon",
     "WEATHERSTACK_ACCESS_KEY": "0a20ae4266f3ae72ba30a6eb7e55be87",  # Get your access key at - https://weatherstack.com/
     "VERBOSE": True  # print logs/details for diagnostics
@@ -33,8 +33,8 @@ nlp_config = {
 }
 
 tts_config = {
-    "VERBOSE": True,
+    "VERBOSE": False,
     "SAMPLE_RATE": 22050,
     "LANGUAGE_CODE": "en-US",  # a BCP-47 language tag
-    "VOICE_NAME": "English-US.Male-1", # Options are English-US-Female-1 and English-US-Male-1
+    "VOICE_NAME": "English-US.Male-1", # Options are English-US.Female-1 and English-US.Male-1
 }
